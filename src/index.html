@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/maplibre-gl@^5.14.0/dist/maplibre-gl.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
+
+    <script src='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js'></script>
+    <link href='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css' rel='stylesheet'/>
+
+    <script src="https://cdn.jsdelivr.net/npm/ol@v10.7.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v10.7.0/ol.css"> 
 </head>
 <body>
-    <main>
-        <form action="get" class="location-form">
+    <header class="header">
+        <div class="header__widgets">
+            <button class="widget-button widget-button--add button" id="addWidget">+</button>
+        </div>
+    </header>
+    <main class="main">
+        <section class="location-form-section">
+            <form action="#" class="location-form">
             <div class="location-form__field">
                 <label for="latitude" class="location-form__label">Широта</label>
                 <input type="text" pattern="-?(\d+\.?\d*|\.\d+)" name="Latitude" id="latitude" class="location-form__input">
@@ -21,10 +32,14 @@
                 <label for="longitude" class="location-form__label">Долгота</label>
                 <input type="text" pattern="-?(\d+\.?\d*|\.\d+)" name="Longitude" id="longitude" class="location-form__input">
             </div>
-            <button type="submit" class="location-form__submit">Показать погоду</button>
+            <button type="submit" class="location-form__submit button">Показать погоду</button>
         </form>
-        <div class="answer"></div>
+        </section>
+        <section class="weather-display">
+            <div class="weather-answer">
+            </div>
+        </section>
     </main>
 </body>
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 </html>
