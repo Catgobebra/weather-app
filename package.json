@@ -3,10 +3,17 @@
   "version": "1.0.0",
   "description": "Веб-приложение для просмотра текущей погоды в различных городах мира с возможностью добавления нескольких виджетов и отображением на карте.",
   "main": "./src/script.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catgobebra/weather-app.git",
+  },
+  "homepage": "http://catgobebra.github.io/weather-app",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
